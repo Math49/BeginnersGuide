@@ -19,6 +19,7 @@ My Fisrt Selenium Robot Test
 
 *** Keywords ***
 the visitor is on "${url}"
+    [Arguments]  ${url}=https://thedemosite.co.uk/
     Open Browser  ${url}  chrome
     Capture Page Screenshot
 
@@ -36,4 +37,4 @@ we count the numbers of "${terms}" occurencies is higher than 10
 we can see "${numbers}" related posts
     Scroll Element Into View    //*[@class='ast-single-related-posts-container']
     ${get_count_articles}=  Get Element Count    //*[@class='ast-single-related-posts-container']//article
-    Should Be True    ${get_count_articles} > 1
+    Should Be True    ${get_count_articles} == 2
