@@ -37,4 +37,3 @@ we can see "${numbers}" related posts
     Scroll Element Into View    //*[@class='ast-single-related-posts-container']
     ${get_count_articles}=  Get Element Count    //*[@class='ast-single-related-posts-container']//article
     Should Be True    ${get_count_articles} > 1
-    Open

@@ -8,7 +8,7 @@ ${Lastname}        VAN NOORT
 ${Email}           contact@acodyme.com
 ${Message}         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 ${Contact_Link}    //*[@id="menu-item-25"]/a/span[text()=
-${Contact_Form}    //*[@id="post-24"]/div/div/form
+${Contact_Form}    //*[@id="post-24"]//form
 
 *** Test Cases ***
 My Second Selenium Robot Test
