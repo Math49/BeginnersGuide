@@ -35,9 +35,10 @@ the visitor log in to his account
     Click  //*[@data-test="login-button"]
 
 the visitor clean his cart if it's not empty
-    ${remove_button_is_visible}    Get Element States    //*[@text="Remove"]    then    bool(value & visible)
-    WHILE    ${remove_button_is_visible}
-        Run Keyword If    ${element_visible}    Click Element    //*[@text="Remove"]
+    Sleep  10s
+    ${get_count_elements}    Get Element Count    //*[text()="Remove"]
+    FOR    ${number}    IN RANGE    ${get_count_elements}
+        Click    //*[text()="Remove"]
     END
 
 the visitor add the "${product_name}" product to cart

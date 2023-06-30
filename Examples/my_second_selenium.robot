@@ -32,7 +32,7 @@ the visitor is on "${url}"
     Capture Page Screenshot
 
 the visitor clicks on "${name_menu_link}" link menu
-    Sleep  4s
+    #Sleep  4s
     ${contact_link_is_visible}=  Run Keyword And Return Status    Wait Until Element Is Visible    ${Contact_Link}"${name_menu_link}"]
     IF    ${contact_link_is_visible}
         Click Element    ${Contact_Link}"${name_menu_link}"]
@@ -51,7 +51,7 @@ the visitor fill the form
 
 the visitor submit his form
     Click Button    //*[@id="post-24"]/div/div/form/div/button
-    Sleep  4s
+    #Sleep  4s
 
 the form is corretly submitted
     Page Should Contain    The form has been submitted successfully!
