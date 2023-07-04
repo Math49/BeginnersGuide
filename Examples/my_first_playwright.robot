@@ -1,13 +1,15 @@
 *** Settings ***
-Resource                            common.robot
+Resource    common.robot
+
 
 *** Variables ***
-${LOGIN}  standard_user
-${PWD}    secret_sauce
+${LOGIN}    standard_user
+${PWD}      secret_sauce
+
 
 *** Test Cases ***
 My Fisrt Playwright Robot Test
-    [Tags]  my_first_playwright
+    [Tags]    my_first_playwright
     # Step 1 : aller sur le site https://www.saucedemo.com/
     Given the visitor is on "https://www.saucedemo.com/" with playwright
     # Step 2 : se connecter au compte standard_user

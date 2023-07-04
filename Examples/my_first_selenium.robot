@@ -1,12 +1,14 @@
 *** Settings ***
-Resource                            common.robot
+Resource    common.robot
+
 
 *** Variables ***
-${first_article}  //article//a[1]
+${first_article}    //article//a[1]
+
 
 *** Test Cases ***
 My Fisrt Selenium Robot Test
-    [Tags]  my_first_selenium
+    [Tags]    my_first_selenium
     # Step 1 : aller sur le site https://thedemosite.co.uk/
     Given the visitor is on "https://thedemosite.co.uk/"
     # Step 2 : cliquer sur le premier article de la page d'accueil
