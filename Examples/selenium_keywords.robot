@@ -31,7 +31,7 @@ the visitor clicks on "${name_menu_link}" link menu
     END
 
 the visitor checks the form is in the page
-    Wait Until Element Is Visible    ${Contact_Form}
+    Wait Until Element Is Visible    ${Contact_Form}    10s
 
 the visitor fill the form
     Input Text    //*[@autocomplete="given-name"]    ${Firstname}
