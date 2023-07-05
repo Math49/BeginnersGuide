@@ -6,7 +6,7 @@ the visitor is on "${url}"
 the visitor clicks on the first article
     ${article_is_visible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${first_article}
     IF    ${article_is_visible}
-        Click Element    ${first_article}
+        Click Element    ${article_is_visible}
         Capture Page Screenshot
     END
 
