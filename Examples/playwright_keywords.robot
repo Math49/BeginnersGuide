@@ -9,9 +9,12 @@ the visitor log in to his account
 
 the visitor clean his cart if it's not empty
     Sleep    5s
-    ${get_count_elements}    Browser.Get Element Count    //*[text()="Remove"]
-    FOR    ${number}    IN RANGE    ${get_count_elements}
-        Click    //*[text()="Remove"]
+    @{get_count_elements}    Browser.Get Elements    //*[text()="Remove"]
+    FOR    ${element}    IN    @{get_count_elements}
+        #Log    ${element}
+        #${attribute_by_element}    Get Attribute    ${element}    name
+        #Log    ${element}
+        Click    ${element}
     END
 
 the visitor add the "${product_name}" product to cart
