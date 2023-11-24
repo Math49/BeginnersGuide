@@ -101,7 +101,7 @@ else ifeq ($(OS_NAME),Darwin)
 	source .venv/bin/activate
 	rfbrowser init
 else
-	@powershell -Command ".venv\/Scripts\/Activate.ps1"
+	@powershell -Command ".venv/Scripts/Activate.ps1"
 	@powershell -Command "rfbrowser init"
 endif
 
