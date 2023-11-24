@@ -11,9 +11,9 @@ the visitor clean his cart if it's not empty
     Sleep    5s
     @{get_count_elements}    Browser.Get Elements    //*[text()="Remove"]
     FOR    ${element}    IN    @{get_count_elements}
-        #Log    ${element}
-        #${attribute_by_element}    Get Attribute    ${element}    name
-        #Log    ${element}
+        # Log    ${element}
+        # ${attribute_by_element}    Get Attribute    ${element}    name
+        # Log    ${element}
         Click    ${element}
     END
 
