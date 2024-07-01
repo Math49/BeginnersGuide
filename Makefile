@@ -103,7 +103,7 @@ else ifeq ($(OS_NAME),Darwin)
 else
 	@powershell -Command "Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope Process"
 	@powershell -Command ".venv\Scripts\Activate.ps1"
-	@powershell -Command "rfbrowser init"
+	@powershell -Command "$(PYTHON) -m Browser.entry init"
 	@powershell -Command "Set-ExecutionPolicy -ExecutionPolicy <OriginalPolicy> -Scope Process"
 endif
 
