@@ -3,14 +3,14 @@ the visitor go to "${url}" on browser "${browser}"
     Open Browser  ${url}  ${browser}
 
 the visitor fills the first form
-    Input Text  //input[@id="user-message"]  ${MESSAGE}
-    Click Element  //button[text()="Show Message"]
+    Wait To Send Text On Visible Element  //input[@id="user-message"]  ${MESSAGE}
+    Wait To Click On Visible Element  //button[text()="Show Message"]
     Element Should Contain  //*[@id="display"]  ${MESSAGE}
 
 the visitor fills the second form
-    Input Text  //*[@id="value1"]  ${VALUE_1}
-    Input Text  //*[@id="value2"]  ${VALUE_2}
-    Click Element  //button[text()="Get Total"]
+    Wait To Send Text On Visible Element  //*[@id="value1"]  ${VALUE_1}
+    Wait To Send Text On Visible Element  //*[@id="value2"]  ${VALUE_2}
+    Wait To Click On Visible Element  //button[text()="Get Total"]  10s
     Element Should Contain  //*[@id="displayvalue"]  ${${VALUE_1}+${VALUE_2}}
 
 all values are correctly sended
@@ -28,10 +28,20 @@ the visitor select these options "${cities}" from the select cities
     ${city_1}=  Get From List  ${cities}  0
     ${city_2}=  Get From List  ${cities}  1
     Select From List By Label  //select[@id="multi-select"]  ${city_1}  ${city_2}
-    Click Element  //button[@id="printAll"]
+    Wait To Click On Visible Element  //button[@id="printAll"]
 
 the selected day is "${day}" displayed
     Wait Until Element Contains  //p[@class="selected-value"]  ${day}
 
 the selected cities are "${cities}" displayed
     Wait Until Element Contains  //p[@class="getall-selected"]  ${cities}
+
+Wait To Click On Visible Element
+    [Arguments]  ${locator}  ${timeout}=5s
+    Wait Until Element Is Visible  ${locator}  ${timeout}
+    Click Element  ${locator}
+
+Wait To Send Text On Visible Element
+    [Arguments]  ${locator}  ${text}  ${timeout}=5s
+    Wait Until Element Is Visible  ${locator}  ${timeout}
+    Input Text  ${locator}  ${text}
