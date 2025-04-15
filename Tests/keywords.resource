@@ -2,7 +2,6 @@
 Library    SeleniumLibrary
 Library    FakerLibrary
 
-
 *** Variables ***
 ${URL}   https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
 ${LOGIN_USERNAME}    Admin
@@ -73,18 +72,20 @@ Initialize Data Set
 
 # Go and login to the website
 
-# Click add button
+# Click submit
+Click submit button
+    Click Element    ${SUBMIT_BUTTON}
 
 # Enter username for create form
 
 # Enter passwords for create form
 
-# Click save button
-
-# Click search button
-
 # Click edit button
+Click edit button
+    Click Element    ${EDIT_BUTTON}
 
 # Click delete button
+Click delete button
+    Click Element    ${DELETE_BUTTON}
 
 # Logout
