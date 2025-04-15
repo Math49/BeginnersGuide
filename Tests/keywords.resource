@@ -43,6 +43,10 @@ ${ADMIN_BUTTON_ADD}                xpath=//button[normalize-space(.)='Add']
 ${ADMIN_FORM_INPUT_ROLE}                xpath=//label[text()='User Role']/ancestor::div[contains(@class,'oxd-input-group')]//div[contains(@class,'oxd-select-text')]
 ${ADMIN_FORM_INPUT_STATUS}              xpath=//label[text()='Status']/ancestor::div[contains(@class,'oxd-input-group')]//div[contains(@class,'oxd-select-text')]
 ${ADMIN_FORM_INPUT_EMPLOYEE_NAME}       xpath=//label[text()='Employee Name']/ancestor::div[contains(@class,'oxd-input-group')]//input
+${ADMIN_FORM_DROPDOWN_THIRD_ELEMENT}    xpath=//div[@role='listbox']//div[3]
+${ADMIN_FORM_DROPDOWN_FIRST_ELEMENT}    xpath=//div[@role='listbox']//div[1]
+${ADMIN_FORM_DROPDOWN_SECOND_ELEMENT}    xpath=//div[@role='listbox']//div[2]
+${ADMIN_USER_LIST}    xpath=//div[contains(@class, 'orangehrm-container')]
 
 # employee elements
 ${EMPLOYEE_NAVIGATION}                 xpath=//span[text()='PIM']/ancestor::a
@@ -68,6 +72,14 @@ Initialize Data Set
 
     ${USER_PASSWORD}    FakerLibrary.Password
     ${EMPLOYEE_PASSWORD}    FakerLibrary.Password
+
+    Set Test Variable    ${USER_NAME}
+    Set Test Variable    ${EMPLOYEE_USERNAME}
+    Set Test Variable    ${EMPLOYEE_FIRST_NAME}
+    Set Test Variable    ${EMPLOYEE_MIDDLE_NAME}
+    Set Test Variable    ${EMPLOYEE_LAST_NAME}
+    Set Test Variable    ${USER_PASSWORD}
+    Set Test Variable    ${EMPLOYEE_PASSWORD}
 
 # Go and login to the website
 Login to Website
