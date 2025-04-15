@@ -28,10 +28,14 @@ ${EDIT_BUTTON}    xpath=//button/i[@class='oxd-icon bi-pencil-fill']
 ${DELETE_BUTTON}    xpath=//button/i[@class='oxd-icon bi-trash']
 ${DELETE_CONFIRM_BUTTON}    xpath=//button[text()='Yes, Delete']
 ${SUBMIT_BUTTON}   xpath=//button[@type='submit']
+${FORM_INPUT_PASSWORD}        xpath=//label[text()='Password']/ancestor::div[contains(@class,'oxd-input-group')]//input
+${FORM_INPUT_CONFIRM_PASSWORD}    xpath=//label[text()='Confirm Password']/ancestor::div[contains(@class,'oxd-input-group')]//input
 
-# login elements
+# login/logout elements
 ${LOGIN_INPUT_USERNAME}    xpath=//input[@name='username']
 ${LOGIN_INPUT_PASSWORD}    xpath=//input[@name='password']
+${ACCOUNT_BUTTON}   xpath=//span[@class='oxd-userdropdown-tab']
+${LOGOUT_BUTTON}   xpath=//a[text()='Logout']
 
 # admin elements
 ${ADMIN_NAVIGATION}                 xpath=//span[text()='Admin']/ancestor::a
@@ -40,8 +44,6 @@ ${ADMIN_FORM_INPUT_ROLE}                xpath=//label[text()='User Role']/ancest
 ${ADMIN_FORM_INPUT_STATUS}              xpath=//label[text()='Status']/ancestor::div[contains(@class,'oxd-input-group')]//div[contains(@class,'oxd-select-text')]
 ${ADMIN_FORM_INPUT_EMPLOYEE_NAME}       xpath=//label[text()='Employee Name']/ancestor::div[contains(@class,'oxd-input-group')]//input
 ${ADMIN_FORM_INPUT_USERNAME}            xpath=//label[text()='Username']/ancestor::div[contains(@class,'oxd-input-group')]//input
-${ADMIN_FORM_INPUT_PASSWORD}            xpath=//label[text()='Password']/ancestor::div[contains(@class,'oxd-input-group')]//input
-${ADMIN_FORM_INPUT_CONFIRM_PASSWORD}    xpath=//label[text()='Confirm Password']/ancestor::div[contains(@class,'oxd-input-group')]//input
 
 ${ADMIN_SEARCH_INPUT_USERNAME}    xpath=//label[text()='Username']/ancestor::div[contains(@class,'oxd-input-group')]//input
 
@@ -55,36 +57,44 @@ ${EMPLOYEE_FORM_INPUT_ID}              xpath=//label[text()='Employee Id']/ances
 ${EMPLOYEE_CREATE_LOGIN_DETAILS}       xpath=//p[text()='Create Login Details']/ancestor::div[contains(@class,'user-form-header')]//div[contains(@class, 'oxd-switch-wrapper')]//input
 ${EMPLOYEE_FORM_INPUT_USERNAME}       xpath=//label[text()='Username']/ancestor::div[contains(@class,'oxd-input-group')]//input
 ${EMPLOYEE_FORM_INPUT_STATUS}         xpath=//label[text()='Status']/ancestor::div[contains(@class,'oxd-input-group')]//div[contains(@class,'--status-grouped-field')]
-${EMPLOYEE_FORM_INPUT_PASSWORD}        xpath=//label[text()='Password']/ancestor::div[contains(@class,'oxd-input-group')]//input
-${EMPLOYEE_FORM_INPUT_CONFIRM_PASSWORD}    xpath=//label[text()='Confirm Password']/ancestor::div[contains(@class,'oxd-input-group')]//input
 
 ${EMPLOYEE_SEARCH_INPUT_NAME}    xpath=//label[text()='Employee Name']/ancestor::div[contains(@class,'oxd-input-group')]//input
 
 *** Keywords ***
 # Initialize data
 Initialize Data Set
-    ${USER_PASSWORD}    FakerLibrary.Password
     ${USER_NAME}    FakerLibrary.UserName
+    ${EMPLOYEE_USERNAME}    FakerLibrary.UserName
+
     ${EMPLOYEE_FIRST_NAME}    FakerLibrary.FirstName
     ${EMPLOYEE_MIDDLE_NAME}    FakerLibrary.FirstName
     ${EMPLOYEE_LAST_NAME}    FakerLibrary.LastName
-    ${EMPLOYEE_USERNAME}    FakerLibrary.UserName
+
+    ${USER_PASSWORD}    FakerLibrary.Password
     ${EMPLOYEE_PASSWORD}    FakerLibrary.Password
 
-# Go and login to the website
+Login to Website
+    Open Browser    ${URL}    Chrome
+    Maximize Browser Window
+    Input Text    ${LOGIN_INPUT_USERNAME}    ${LOGIN_USERNAME}
+    Input Text    ${LOGIN_INPUT_PASSWORD}    ${LOGIN_PASSWORD}
+    Click Button    ${SUBMIT_BUTTON}
 
-# Click add button
 
 # Enter username for create form
 
 # Enter passwords for create form
-
-# Click save button
-
-# Click search button
+Enter passwords for create form
+    [Arguments]    ${PASSWORD}
+    Input Text    ${FORM_INPUT_PASSWORD}    ${PASSWORD}
+    Input Text    ${FORM_INPUT_CONFIRM_PASSWORD}    ${PASSWORD}
 
 # Click edit button
 
 # Click delete button
 
 # Logout
+Logout
+    Click Element    ${ACCOUNT_BUTTON}
+    Click Element    ${LOGOUT_BUTTON}
+    Close Browser
