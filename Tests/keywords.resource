@@ -38,7 +38,7 @@ ${ACCOUNT_BUTTON}   xpath=//span[@class='oxd-userdropdown-tab']
 ${LOGOUT_BUTTON}   xpath=//a[text()='Logout']
 
 # admin elements
-${ADMIN_NAVIGATION}                 xpath=//span[text()='Admin']/ancestor::a
+${ADMIN_NAVIGATION}                 xpath=//a[.//span[contains(normalize-space(.), 'Admin')]]
 ${ADMIN_BUTTON_ADD}                xpath=//button[normalize-space(.)='Add']
 ${ADMIN_FORM_INPUT_ROLE}                xpath=//label[text()='User Role']/ancestor::div[contains(@class,'oxd-input-group')]//div[contains(@class,'oxd-select-text')]
 ${ADMIN_FORM_INPUT_STATUS}              xpath=//label[text()='Status']/ancestor::div[contains(@class,'oxd-input-group')]//div[contains(@class,'oxd-select-text')]
@@ -78,6 +78,7 @@ Click When Visible
 Login to Website
     Open Browser    ${URL}    Chrome
     Maximize Browser Window
+    Wait Until Element Is Visible    ${LOGIN_INPUT_USERNAME}     timeout=10s
     Input Text    ${LOGIN_INPUT_USERNAME}    ${LOGIN_USERNAME}
     Input Text    ${LOGIN_INPUT_PASSWORD}    ${LOGIN_PASSWORD}
     Click Button    ${SUBMIT_BUTTON}
