@@ -47,11 +47,11 @@ ${ADMIN_FORM_INPUT_EMPLOYEE_NAME}       xpath=//label[text()='Employee Name']/an
 # employee elements
 ${EMPLOYEE_NAVIGATION}                 xpath=//span[text()='PIM']/ancestor::a
 ${EMPLOYEE_BUTTON_ADD}                xpath=//button[normalize-space(.)='Add']
-${EMPLOYEE_FORM_INPUT_FIRST_NAME}       xpath=//label[text()='First Name']/ancestor::div[contains(@class,'oxd-input-group')]//input
-${EMPLOYEE_FORM_INPUT_MIDDLE_NAME}      xpath=//label[text()='Middle Name']/ancestor::div[contains(@class,'oxd-input-group')]//input
-${EMPLOYEE_FORM_INPUT_LAST_NAME}        xpath=//label[text()='Last Name']/ancestor::div[contains(@class,'oxd-input-group')]//input
+${EMPLOYEE_FORM_INPUT_FIRST_NAME}     xpath=//input[@name='firstName']
+${EMPLOYEE_FORM_INPUT_MIDDLE_NAME}    xpath=//input[@name='middleName']
+${EMPLOYEE_FORM_INPUT_LAST_NAME}      xpath=//input[@name='lastName']
 ${EMPLOYEE_FORM_INPUT_ID}              xpath=//label[text()='Employee Id']/ancestor::div[contains(@class,'oxd-input-group')]//input
-${EMPLOYEE_CREATE_LOGIN_DETAILS}       xpath=//p[text()='Create Login Details']/ancestor::div[contains(@class,'user-form-header')]//div[contains(@class, 'oxd-switch-wrapper')]//input
+${EMPLOYEE_CREATE_LOGIN_DETAILS}    xpath=//div[contains(@class,'user-form-header')]//span[contains(@class,'oxd-switch-input')]
 ${EMPLOYEE_FORM_INPUT_STATUS}         xpath=//label[text()='Status']/ancestor::div[contains(@class,'oxd-input-group')]//div[contains(@class,'--status-grouped-field')]
 
 ${EMPLOYEE_SEARCH_INPUT_NAME}    xpath=//label[text()='Employee Name']/ancestor::div[contains(@class,'oxd-input-group')]//input
@@ -68,6 +68,14 @@ Initialize Data Set
 
     ${USER_PASSWORD}    FakerLibrary.Password
     ${EMPLOYEE_PASSWORD}    FakerLibrary.Password
+
+    Set Test Variable    ${USER_NAME}
+    Set Test Variable    ${EMPLOYEE_USERNAME}
+    Set Test Variable    ${EMPLOYEE_FIRST_NAME}
+    Set Test Variable    ${EMPLOYEE_MIDDLE_NAME}
+    Set Test Variable    ${EMPLOYEE_LAST_NAME}
+    Set Test Variable    ${USER_PASSWORD}
+    Set Test Variable    ${EMPLOYEE_PASSWORD}
 
 Click When Visible
     [Arguments]    ${locator}    ${timeout}=10s
