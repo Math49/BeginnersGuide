@@ -20,34 +20,41 @@ ${EMPLOYEE_PASSWORD}    testpassword
 ${EMPLOYEE_USERNAME}    testemployee
 
 # elements
+${EDIT_BUTTON}    xpath=//button/i[@class='oxd-icon bi-pencil-fill']
+${DELETE_BUTTON}    xpath=//button/i[@class='oxd-icon bi-trash']
+${DELETE_CONFIRM_BUTTON}    xpath=//button[text()='Yes, Delete']
+${SUBMIT_BUTTON}   xpath=//button[@type='submit']
+
 # login elements
 ${LOGIN_INPUT_USERNAME}    xpath=//input[@name='username']
 ${LOGIN_INPUT_PASSWORD}    xpath=//input[@name='password']
-${LOGIN_BUTTON_SUBMIT}     xpath=//button[@type='submit']
-
 
 # admin elements
 ${ADMIN_NAVIGATION}                 xpath=//span[text()='Admin']/ancestor::a
 ${ADMIN_BUTTON_ADD}                xpath=//button[normalize-space(.)='Add']
-${ADMIN_CREATE_INPUT_ROLE}                xpath=//label[text()='User Role']/ancestor::div[contains(@class,'oxd-input-group')]//div[contains(@class,'oxd-select-text')]
-${ADMIN_CREATE_INPUT_STATUS}              xpath=//label[text()='Status']/ancestor::div[contains(@class,'oxd-input-group')]//div[contains(@class,'oxd-select-text')]
-${ADMIN_CREATE_INPUT_EMPLOYEE_NAME}       xpath=//label[text()='Employee Name']/ancestor::div[contains(@class,'oxd-input-group')]//input
-${ADMIN_CREATE_INPUT_USERNAME}            xpath=//label[text()='Username']/ancestor::div[contains(@class,'oxd-input-group')]//input
-${ADMIN_CREATE_INPUT_PASSWORD}            xpath=//label[text()='Password']/ancestor::div[contains(@class,'oxd-input-group')]//input
-${ADMIN_CREATE_INPUT_CONFIRM_PASSWORD}    xpath=//label[text()='Confirm Password']/ancestor::div[contains(@class,'oxd-input-group')]//input
-${ADMIN_CREATE_BUTTON_SAVE}               xpath=//button[@type='submit']
+${ADMIN_FORM_INPUT_ROLE}                xpath=//label[text()='User Role']/ancestor::div[contains(@class,'oxd-input-group')]//div[contains(@class,'oxd-select-text')]
+${ADMIN_FORM_INPUT_STATUS}              xpath=//label[text()='Status']/ancestor::div[contains(@class,'oxd-input-group')]//div[contains(@class,'oxd-select-text')]
+${ADMIN_FORM_INPUT_EMPLOYEE_NAME}       xpath=//label[text()='Employee Name']/ancestor::div[contains(@class,'oxd-input-group')]//input
+${ADMIN_FORM_INPUT_USERNAME}            xpath=//label[text()='Username']/ancestor::div[contains(@class,'oxd-input-group')]//input
+${ADMIN_FORM_INPUT_PASSWORD}            xpath=//label[text()='Password']/ancestor::div[contains(@class,'oxd-input-group')]//input
+${ADMIN_FORM_INPUT_CONFIRM_PASSWORD}    xpath=//label[text()='Confirm Password']/ancestor::div[contains(@class,'oxd-input-group')]//input
 
 ${ADMIN_SEARCH_INPUT_USERNAME}    xpath=//label[text()='Username']/ancestor::div[contains(@class,'oxd-input-group')]//input
-${ADMIN_SEARCH_INPUT_ROLE}    xpath=//label[text()='User Role']/ancestor::div[contains(@class,'oxd-input-group')]//div[contains(@class,'oxd-select-text')]
-${ADMIN_SEARCH_INPUT_EMPLOYEE_NAME}    xpath=//label[text()='Employee Name']/ancestor::div[contains(@class,'oxd-input-group')]//input
-${ADMIN_SEARCH_INPUT_STATUS}    xpath=//label[text()='Status']/ancestor::div[contains(@class,'oxd-input-group')]//div[contains(@class,'oxd-select-text')]
-${ADMIN_SEARCH_BUTTON}    xpath=//button[@type='submit']
 
-${ADMIN_EDIT_BUTTON}    xpath=//button/i[@class='oxd-icon bi-pencil-fill']
+# employee elements
+${EMPLOYEE_NAVIGATION}                 xpath=//span[text()='PIM']/ancestor::a
+${EMPLOYEE_BUTTON_ADD}                xpath=//button[normalize-space(.)='Add']
+${EMPLOYEE_FORM_INPUT_FIRST_NAME}       xpath=//label[text()='First Name']/ancestor::div[contains(@class,'oxd-input-group')]//input
+${EMPLOYEE_FORM_INPUT_MIDDLE_NAME}      xpath=//label[text()='Middle Name']/ancestor::div[contains(@class,'oxd-input-group')]//input
+${EMPLOYEE_FORM_INPUT_LAST_NAME}        xpath=//label[text()='Last Name']/ancestor::div[contains(@class,'oxd-input-group')]//input
+${EMPLOYEE_FORM_INPUT_ID}              xpath=//label[text()='Employee Id']/ancestor::div[contains(@class,'oxd-input-group')]//input
+${EMPLOYEE_CREATE_LOGIN_DETAILS}       xpath=//p[text()='Create Login Details']/ancestor::div[contains(@class,'user-form-header')]//div[contains(@class, 'oxd-switch-wrapper')]//input
+${EMPLOYEE_FORM_INPUT_USERNAME}       xpath=//label[text()='Username']/ancestor::div[contains(@class,'oxd-input-group')]//input
+${EMPLOYEE_FORM_INPUT_STATUS}         xpath=//label[text()='Status']/ancestor::div[contains(@class,'oxd-input-group')]//div[contains(@class,'--status-grouped-field')]
+${EMPLOYEE_FORM_INPUT_PASSWORD}        xpath=//label[text()='Password']/ancestor::div[contains(@class,'oxd-input-group')]//input
+${EMPLOYEE_FORM_INPUT_CONFIRM_PASSWORD}    xpath=//label[text()='Confirm Password']/ancestor::div[contains(@class,'oxd-input-group')]//input
 
-
-${ADMIN_DELETE_BUTTON}    xpath=//button/i[@class='oxd-icon bi-trash']
-${ADMIN_DELETE_CONFIRM_BUTTON}    xpath=//button[text()='Yes, Delete']
+${EMPLOYEE_SEARCH_INPUT_NAME}    xpath=//label[text()='Employee Name']/ancestor::div[contains(@class,'oxd-input-group')]//input
 
 *** Keywords ***
 # Initialize data
