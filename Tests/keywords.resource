@@ -69,6 +69,11 @@ Initialize Data Set
     ${USER_PASSWORD}    FakerLibrary.Password
     ${EMPLOYEE_PASSWORD}    FakerLibrary.Password
 
+Click When Visible
+    [Arguments]    ${locator}    ${timeout}=10s
+    Wait Until Element Is Visible    ${locator}    timeout=${timeout}
+    Click Element    ${locator}
+
 # Go and login to the website
 Login to Website
     Open Browser    ${URL}    Chrome
@@ -79,7 +84,7 @@ Login to Website
 
 # Click submit
 Click submit button
-    Click Element    ${SUBMIT_BUTTON}
+    Click When Visible    ${SUBMIT_BUTTON}
 
 # Enter username for create form
 Enter username for create form
@@ -94,16 +99,16 @@ Enter passwords for create form
 
 # Click edit button
 Click edit button
-    Click Element    ${EDIT_BUTTON}
+    Click When Visible    ${EDIT_BUTTON}
 
 # Click delete button
 Click delete button
-    Click Element    ${DELETE_BUTTON}
+    Click When Visible    ${DELETE_BUTTON}
     Wait Until Element Is Visible    ${DELETE_CONFIRM_BUTTON}    timeout=10s
-    Click Element    ${DELETE_CONFIRM_BUTTON}
+    Click When Visible    ${DELETE_CONFIRM_BUTTON}
 
 # Logout
 Logout
-    Click Element    ${ACCOUNT_BUTTON}
-    Click Element    ${LOGOUT_BUTTON}
+    Click When Visible    ${ACCOUNT_BUTTON}
+    Click When Visible    ${LOGOUT_BUTTON}
     Close Browser
