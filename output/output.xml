@@ -1,280 +1,170 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-04-15T12:01:16.306275" rpa="false" schemaversion="5">
-<suite id="s1" name="TS TODO" source="c:\Users\mthsm\Documents\B3\Qualite-logiciel-et-test\Eval\Tests\TS_TODO.robot">
-<test id="s1-t1" name="Scenario TODO" line="22">
-<kw name="Launch Todo">
-<kw name="YOU_CAN_DO_IT_KEYWORD">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-04-15T12:01:16.535023" level="INFO">['https://todomvc.com/examples/angular/dist/browser/#/all', 'chrome']</msg>
-<arg>${arg}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-04-15T12:01:16.534848" elapsed="0.001748"/>
+<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-04-15T15:39:27.243556" rpa="false" schemaversion="5">
+<suite id="s1" name="User Manager Selenium Robot Test" source="c:\Users\mthsm\Documents\B3\Qualite-logiciel-et-test\Eval\Tests\User_Manager_Selenium_Robot_Test.robot">
+<test id="s1-t1" name="Test Case 1: Create User" line="7">
+<kw name="Initialize Data Set" owner="keywords">
+<kw name="User Name" owner="FakerLibrary">
+<msg time="2025-04-15T15:39:27.702999" level="INFO">${USER_NAME} = cassandra50</msg>
+<var>${USER_NAME}</var>
+<status status="PASS" start="2025-04-15T15:39:27.702625" elapsed="0.001482"/>
 </kw>
+<kw name="User Name" owner="FakerLibrary">
+<msg time="2025-04-15T15:39:27.704637" level="INFO">${EMPLOYEE_USERNAME} = brownjustin</msg>
+<var>${EMPLOYEE_USERNAME}</var>
+<status status="PASS" start="2025-04-15T15:39:27.704273" elapsed="0.000458"/>
+</kw>
+<kw name="First Name" owner="FakerLibrary">
+<msg time="2025-04-15T15:39:27.705017" level="INFO">${EMPLOYEE_FIRST_NAME} = Kelly</msg>
+<var>${EMPLOYEE_FIRST_NAME}</var>
+<status status="PASS" start="2025-04-15T15:39:27.704844" elapsed="0.000241"/>
+</kw>
+<kw name="First Name" owner="FakerLibrary">
+<msg time="2025-04-15T15:39:27.705337" level="INFO">${EMPLOYEE_MIDDLE_NAME} = Jessica</msg>
+<var>${EMPLOYEE_MIDDLE_NAME}</var>
+<status status="PASS" start="2025-04-15T15:39:27.705177" elapsed="0.000218"/>
+</kw>
+<kw name="Last Name" owner="FakerLibrary">
+<msg time="2025-04-15T15:39:27.705713" level="INFO">${EMPLOYEE_LAST_NAME} = Matthews</msg>
+<var>${EMPLOYEE_LAST_NAME}</var>
+<status status="PASS" start="2025-04-15T15:39:27.705528" elapsed="0.000258"/>
+</kw>
+<kw name="Password" owner="FakerLibrary">
+<msg time="2025-04-15T15:39:27.706030" level="INFO">${USER_PASSWORD} = JXDcZn8f^0</msg>
+<var>${USER_PASSWORD}</var>
+<doc>Generate a random password of the specified ``length``.</doc>
+<status status="PASS" start="2025-04-15T15:39:27.705883" elapsed="0.000207"/>
+</kw>
+<kw name="Password" owner="FakerLibrary">
+<msg time="2025-04-15T15:39:27.706326" level="INFO">${EMPLOYEE_PASSWORD} = (v+31S#h6_</msg>
+<var>${EMPLOYEE_PASSWORD}</var>
+<doc>Generate a random password of the specified ``length``.</doc>
+<status status="PASS" start="2025-04-15T15:39:27.706183" elapsed="0.000199"/>
+</kw>
+<status status="PASS" start="2025-04-15T15:39:27.701934" elapsed="0.004523"/>
+</kw>
+<kw name="Login to Website" owner="keywords">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-04-15T15:39:27.707455" level="INFO">Opening browser 'Chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
 <arg>${URL}</arg>
-<arg>${BROWSER}</arg>
-<status status="PASS" start="2025-04-15T12:01:16.534342" elapsed="0.002636"/>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-04-15T15:39:27.707245" elapsed="2.754662"/>
 </kw>
-<kw name="YOU_CAN_DO_IT_KEYWORD">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-04-15T12:01:16.538156" level="INFO">['1s']</msg>
-<arg>${arg}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-04-15T12:01:16.537831" elapsed="0.000538"/>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-04-15T15:39:30.462220" elapsed="0.038481"/>
 </kw>
-<arg>1s</arg>
-<status status="PASS" start="2025-04-15T12:01:16.537272" elapsed="0.001185"/>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LOGIN_INPUT_USERNAME}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-15T15:39:30.500937" elapsed="0.237825"/>
 </kw>
-<kw name="YOU_CAN_DO_IT_KEYWORD">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-04-15T12:01:16.539053" level="INFO">['angular']</msg>
-<arg>${arg}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-04-15T12:01:16.538885" elapsed="0.000266"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-15T15:39:30.739805" level="INFO">Typing text 'Admin' into text field 'xpath=//input[@name='username']'.</msg>
+<arg>${LOGIN_INPUT_USERNAME}</arg>
+<arg>${LOGIN_USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-15T15:39:30.739381" elapsed="0.100369"/>
 </kw>
-<arg>angular</arg>
-<status status="PASS" start="2025-04-15T12:01:16.538659" elapsed="0.000565"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-15T15:39:30.840235" level="INFO">Typing text 'admin123' into text field 'xpath=//input[@name='password']'.</msg>
+<arg>${LOGIN_INPUT_PASSWORD}</arg>
+<arg>${LOGIN_PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-15T15:39:30.839981" elapsed="0.076690"/>
 </kw>
-<kw name="YOU_CAN_DO_IT_KEYWORD">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-04-15T12:01:16.539670" level="INFO">['YOU_CAN_DO_IT_LOCATOR', 'Todos', 'timeout=5s']</msg>
-<arg>${arg}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-04-15T12:01:16.539542" elapsed="0.000201"/>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-04-15T15:39:30.917172" level="INFO">Clicking button 'xpath=//button[@type='submit']'.</msg>
+<arg>${SUBMIT_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-15T15:39:30.916900" elapsed="0.929288"/>
 </kw>
-<arg>${LOCATOR_TITLE}</arg>
-<arg>Todos</arg>
-<arg>timeout=5s</arg>
-<status status="PASS" start="2025-04-15T12:01:16.539331" elapsed="0.000488"/>
+<status status="PASS" start="2025-04-15T15:39:27.706767" elapsed="4.139683"/>
 </kw>
-<status status="PASS" start="2025-04-15T12:01:16.533992" elapsed="0.005892"/>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ADMIN_NAVIGATION}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-15T15:39:31.847177" elapsed="0.248399"/>
 </kw>
-<kw name="YOU_CAN_DO_IT_KEYWORD">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-04-15T12:01:16.540769" level="INFO">['C:\\Users\\mthsm\\Documents\\B3\\Qualite-logiciel-et-test\\Eval\\output/step01-initial.png']</msg>
-<arg>${arg}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-04-15T12:01:16.540649" elapsed="0.000207"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-15T15:39:32.096749" level="INFO">Clicking element 'xpath=//a[.//span[contains(normalize-space(.), 'Admin')]]'.</msg>
+<arg>${ADMIN_NAVIGATION}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-15T15:39:32.096399" elapsed="0.663551"/>
 </kw>
-<arg>${OUTPUT_DIR}/step01-initial.png</arg>
-<status status="PASS" start="2025-04-15T12:01:16.540415" elapsed="0.000514"/>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ADMIN_BUTTON_ADD}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-15T15:39:32.760447" elapsed="0.235673"/>
 </kw>
-<kw name="Add Todo">
-<kw name="YOU_CAN_DO_IT_KEYWORD">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-04-15T12:01:16.542187" level="INFO">['YOU_CAN_DO_IT_LOCATOR', 'SELENIUM']</msg>
-<arg>${arg}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-04-15T12:01:16.542057" elapsed="0.000231"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-15T15:39:32.997081" level="INFO">Clicking element 'xpath=//button[normalize-space(.)='Add']'.</msg>
+<arg>${ADMIN_BUTTON_ADD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-15T15:39:32.996833" elapsed="0.304639"/>
 </kw>
-<arg>${LOCATOR_INPUT_NEWTODO}</arg>
-<arg>${todo_name}</arg>
-<status status="PASS" start="2025-04-15T12:01:16.541805" elapsed="0.000562"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-15T15:39:33.302238" level="INFO">Clicking element 'xpath=//label[text()='User Role']/ancestor::div[contains(@class,'oxd-input-group')]//div[contains(@class,'oxd-select-text')]'.</msg>
+<msg time="2025-04-15T15:39:33.424596" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-6.png"&gt;&lt;img src="selenium-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2025-04-15T15:39:33.424867" level="FAIL">Element with locator 'xpath=//label[text()='User Role']/ancestor::div[contains(@class,'oxd-input-group')]//div[contains(@class,'oxd-select-text')]' not found.</msg>
+<arg>${ADMIN_FORM_INPUT_ROLE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2025-04-15T15:39:33.301942" elapsed="0.126988">Element with locator 'xpath=//label[text()='User Role']/ancestor::div[contains(@class,'oxd-input-group')]//div[contains(@class,'oxd-select-text')]' not found.</status>
 </kw>
-<kw name="YOU_CAN_DO_IT_KEYWORD">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-04-15T12:01:16.542730" level="INFO">['YOU_CAN_DO_IT_LOCATOR', 'TODO_KEY_RETURN']</msg>
-<arg>${arg}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-04-15T12:01:16.542636" elapsed="0.000165"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath=//div[@role="option" and text()='${USER_ROLE}']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-04-15T15:39:33.431061" elapsed="0.000127"/>
 </kw>
-<arg>${LOCATOR_INPUT_NEWTODO}</arg>
-<arg>TODO_KEY_RETURN</arg>
-<status status="PASS" start="2025-04-15T12:01:16.542463" elapsed="0.000403"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>${ADMIN_FORM_INPUT_STATUS}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-04-15T15:39:33.431713" elapsed="0.000120"/>
 </kw>
-<kw name="YOU_CAN_DO_IT_KEYWORD">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-04-15T12:01:16.543313" level="INFO">['SELENIUM']</msg>
-<arg>${arg}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-04-15T12:01:16.543174" elapsed="0.000223"/>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>xpath=//div[@role="option" and text()='${USER_STATUS}']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-04-15T15:39:33.432687" elapsed="0.000155"/>
 </kw>
-<arg>${todo_name}</arg>
-<status status="PASS" start="2025-04-15T12:01:16.542954" elapsed="0.000506"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>${ADMIN_FORM_INPUT_EMPLOYEE_NAME}</arg>
+<arg>${EMPLOYEE_FIRST_NAME} ${EMPLOYEE_LAST_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2025-04-15T15:39:33.437778" elapsed="0.000267"/>
 </kw>
-<arg>SELENIUM</arg>
-<status status="PASS" start="2025-04-15T12:01:16.541519" elapsed="0.001997"/>
+<kw name="Enter username for create form" owner="keywords">
+<arg>${USER_NAME}</arg>
+<status status="NOT RUN" start="2025-04-15T15:39:33.439432" elapsed="0.000284"/>
 </kw>
-<kw name="Add Todo">
-<kw name="YOU_CAN_DO_IT_KEYWORD">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-04-15T12:01:16.544278" level="INFO">['YOU_CAN_DO_IT_LOCATOR', 'APPIUM']</msg>
-<arg>${arg}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-04-15T12:01:16.544166" elapsed="0.000209"/>
+<kw name="Enter passwords for create form" owner="keywords">
+<arg>${USER_PASSWORD}</arg>
+<status status="NOT RUN" start="2025-04-15T15:39:33.440364" elapsed="0.000402"/>
 </kw>
-<arg>${LOCATOR_INPUT_NEWTODO}</arg>
-<arg>${todo_name}</arg>
-<status status="PASS" start="2025-04-15T12:01:16.543972" elapsed="0.000480"/>
+<kw name="Click submit button" owner="keywords">
+<status status="NOT RUN" start="2025-04-15T15:39:33.441664" elapsed="0.000245"/>
 </kw>
-<kw name="YOU_CAN_DO_IT_KEYWORD">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-04-15T12:01:16.544824" level="INFO">['YOU_CAN_DO_IT_LOCATOR', 'TODO_KEY_RETURN']</msg>
-<arg>${arg}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-04-15T12:01:16.544715" elapsed="0.000184"/>
+<kw name="Logout" owner="keywords">
+<status status="NOT RUN" start="2025-04-15T15:39:33.442784" elapsed="0.000136"/>
 </kw>
-<arg>${LOCATOR_INPUT_NEWTODO}</arg>
-<arg>TODO_KEY_RETURN</arg>
-<status status="PASS" start="2025-04-15T12:01:16.544541" elapsed="0.000433"/>
-</kw>
-<kw name="YOU_CAN_DO_IT_KEYWORD">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-04-15T12:01:16.545358" level="INFO">['APPIUM']</msg>
-<arg>${arg}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-04-15T12:01:16.545238" elapsed="0.000205"/>
-</kw>
-<arg>${todo_name}</arg>
-<status status="PASS" start="2025-04-15T12:01:16.545066" elapsed="0.000439"/>
-</kw>
-<arg>APPIUM</arg>
-<status status="PASS" start="2025-04-15T12:01:16.543801" elapsed="0.001759"/>
-</kw>
-<kw name="Add Todo">
-<kw name="YOU_CAN_DO_IT_KEYWORD">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-04-15T12:01:16.546526" level="INFO">['YOU_CAN_DO_IT_LOCATOR', 'PYTHON']</msg>
-<arg>${arg}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-04-15T12:01:16.546410" elapsed="0.000204"/>
-</kw>
-<arg>${LOCATOR_INPUT_NEWTODO}</arg>
-<arg>${todo_name}</arg>
-<status status="PASS" start="2025-04-15T12:01:16.546212" elapsed="0.000476"/>
-</kw>
-<kw name="YOU_CAN_DO_IT_KEYWORD">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-04-15T12:01:16.547274" level="INFO">['YOU_CAN_DO_IT_LOCATOR', 'TODO_KEY_RETURN']</msg>
-<arg>${arg}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-04-15T12:01:16.546939" elapsed="0.000419"/>
-</kw>
-<arg>${LOCATOR_INPUT_NEWTODO}</arg>
-<arg>TODO_KEY_RETURN</arg>
-<status status="PASS" start="2025-04-15T12:01:16.546776" elapsed="0.000654"/>
-</kw>
-<kw name="YOU_CAN_DO_IT_KEYWORD">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-04-15T12:01:16.547839" level="INFO">['PYTHON']</msg>
-<arg>${arg}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-04-15T12:01:16.547721" elapsed="0.000196"/>
-</kw>
-<arg>${todo_name}</arg>
-<status status="PASS" start="2025-04-15T12:01:16.547528" elapsed="0.000451"/>
-</kw>
-<arg>PYTHON</arg>
-<status status="PASS" start="2025-04-15T12:01:16.545980" elapsed="0.002057"/>
-</kw>
-<kw name="YOU_CAN_DO_IT_KEYWORD">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-04-15T12:01:16.548913" level="INFO">['C:\\Users\\mthsm\\Documents\\B3\\Qualite-logiciel-et-test\\Eval\\output/step02-addTodo.png']</msg>
-<arg>${arg}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-04-15T12:01:16.548766" elapsed="0.000232"/>
-</kw>
-<arg>${OUTPUT_DIR}/step02-addTodo.png</arg>
-<status status="PASS" start="2025-04-15T12:01:16.548468" elapsed="0.000604"/>
-</kw>
-<kw name="Select Todo">
-<kw name="YOU_CAN_DO_IT_KEYWORD">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-04-15T12:01:16.550107" level="INFO">['YOU_CAN_DO_IT_DYNAMIC_LOCATOR_INPUT_CHECKBOX_LI_CONTAINS_USERNAME']</msg>
-<arg>${arg}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-04-15T12:01:16.549971" elapsed="0.000249"/>
-</kw>
-<arg>YOU_CAN_DO_IT_DYNAMIC_LOCATOR_INPUT_CHECKBOX_LI_CONTAINS_USERNAME</arg>
-<status status="PASS" start="2025-04-15T12:01:16.549772" elapsed="0.000588"/>
-</kw>
-<arg>APPIUM</arg>
-<status status="PASS" start="2025-04-15T12:01:16.549536" elapsed="0.001119"/>
-</kw>
-<kw name="YOU_CAN_DO_IT_KEYWORD">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-04-15T12:01:16.551392" level="INFO">['C:\\Users\\mthsm\\Documents\\B3\\Qualite-logiciel-et-test\\Eval\\output/step03-selectTodo.png']</msg>
-<arg>${arg}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-04-15T12:01:16.551266" elapsed="0.000219"/>
-</kw>
-<arg>${OUTPUT_DIR}/step03-selectTodo.png</arg>
-<status status="PASS" start="2025-04-15T12:01:16.551025" elapsed="0.000534"/>
-</kw>
-<kw name="Clear Todo">
-<kw name="YOU_CAN_DO_IT_KEYWORD">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-04-15T12:01:16.552397" level="INFO">['YOU_CAN_DO_IT_LOCATOR']</msg>
-<arg>${arg}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-04-15T12:01:16.552281" elapsed="0.000208"/>
-</kw>
-<arg>${LOCATOR_BUTTON_CLEAR}</arg>
-<status status="PASS" start="2025-04-15T12:01:16.552086" elapsed="0.000476"/>
-</kw>
-<status status="PASS" start="2025-04-15T12:01:16.551885" elapsed="0.000741"/>
-</kw>
-<kw name="YOU_CAN_DO_IT_KEYWORD">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-04-15T12:01:16.553824" level="INFO">['C:\\Users\\mthsm\\Documents\\B3\\Qualite-logiciel-et-test\\Eval\\output/step04-clearTodo.png']</msg>
-<arg>${arg}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-04-15T12:01:16.553644" elapsed="0.000314"/>
-</kw>
-<arg>${OUTPUT_DIR}/step04-clearTodo.png</arg>
-<status status="PASS" start="2025-04-15T12:01:16.553280" elapsed="0.000796"/>
-</kw>
-<kw name="Delete Todo">
-<kw name="YOU_CAN_DO_IT_KEYWORD">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-04-15T12:01:16.554990" level="INFO">['YOU_CAN_DO_IT_LOCATOR']</msg>
-<arg>${arg}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-04-15T12:01:16.554874" elapsed="0.000205"/>
-</kw>
-<arg>${LOCATOR_BUTTON_CLEAR}</arg>
-<status status="PASS" start="2025-04-15T12:01:16.554682" elapsed="0.000476"/>
-</kw>
-<arg>PYTHON</arg>
-<status status="PASS" start="2025-04-15T12:01:16.554456" elapsed="0.000766"/>
-</kw>
-<kw name="YOU_CAN_DO_IT_KEYWORD">
-<kw name="Log" owner="BuiltIn">
-<msg time="2025-04-15T12:01:16.556080" level="INFO">['C:\\Users\\mthsm\\Documents\\B3\\Qualite-logiciel-et-test\\Eval\\output/step04-clearTodo.png']</msg>
-<arg>${arg}</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2025-04-15T12:01:16.555957" elapsed="0.000208"/>
-</kw>
-<arg>${OUTPUT_DIR}/step04-clearTodo.png</arg>
-<status status="PASS" start="2025-04-15T12:01:16.555722" elapsed="0.000517"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-04-15T12:01:16.557040" elapsed="0.000447"/>
-</kw>
-<doc>
-0) Exercices sur le site angular
-
-1) scenario d'ajout de 3 todo
-
-2) traitement d'une tache
-
-3) supression d'une tache
-
-4) contrôle supplémentaire</doc>
+<tag>create</tag>
 <tag>tnr</tag>
-<status status="PASS" start="2025-04-15T12:01:16.533183" elapsed="0.024873"/>
+<status status="FAIL" start="2025-04-15T15:39:27.701099" elapsed="5.742744">Element with locator 'xpath=//label[text()='User Role']/ancestor::div[contains(@class,'oxd-input-group')]//div[contains(@class,'oxd-select-text')]' not found.</status>
 </test>
-<status status="PASS" start="2025-04-15T12:01:16.309477" elapsed="0.249721"/>
+<status status="FAIL" start="2025-04-15T15:39:27.246522" elapsed="6.199407"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">tnr</stat>
+<stat pass="0" fail="1" skip="0">create</stat>
+<stat pass="0" fail="1" skip="0">tnr</stat>
 </tag>
 <suite>
-<stat name="TS TODO" id="s1" pass="1" fail="0" skip="0">TS TODO</stat>
+<stat name="User Manager Selenium Robot Test" id="s1" pass="0" fail="1" skip="0">User Manager Selenium Robot Test</stat>
 </suite>
 </statistics>
 <errors>
