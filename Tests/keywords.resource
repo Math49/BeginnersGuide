@@ -63,23 +63,22 @@ ${EMPLOYEE_SEARCH_INPUT_NAME}    xpath=//label[text()='Employee Name']/ancestor:
 *** Keywords ***
 # Initialize data
 Initialize Data Set
-    ${USER_NAME}    FakerLibrary.UserName
-    ${EMPLOYEE_USERNAME}    FakerLibrary.UserName
+    ${generated_user_name}=           FakerLibrary.UserName
+    ${generated_employee_username}=   FakerLibrary.UserName
+    ${generated_first_name}=          FakerLibrary.FirstName
+    ${generated_middle_name}=         FakerLibrary.FirstName
+    ${generated_last_name}=           FakerLibrary.LastName
+    ${generated_user_password}=       FakerLibrary.Password
+    ${generated_employee_password}=   FakerLibrary.Password
 
-    ${EMPLOYEE_FIRST_NAME}    FakerLibrary.FirstName
-    ${EMPLOYEE_MIDDLE_NAME}    FakerLibrary.FirstName
-    ${EMPLOYEE_LAST_NAME}    FakerLibrary.LastName
+    Set Test Variable    ${USER_NAME}             ${generated_user_name}
+    Set Test Variable    ${EMPLOYEE_USERNAME}     ${generated_employee_username}
+    Set Test Variable    ${EMPLOYEE_FIRST_NAME}   ${generated_first_name}
+    Set Test Variable    ${EMPLOYEE_MIDDLE_NAME}  ${generated_middle_name}
+    Set Test Variable    ${EMPLOYEE_LAST_NAME}    ${generated_last_name}
+    Set Test Variable    ${USER_PASSWORD}         ${generated_user_password}
+    Set Test Variable    ${EMPLOYEE_PASSWORD}     ${generated_employee_password}
 
-    ${USER_PASSWORD}    FakerLibrary.Password
-    ${EMPLOYEE_PASSWORD}    FakerLibrary.Password
-
-    Set Test Variable    ${USER_NAME}
-    Set Test Variable    ${EMPLOYEE_USERNAME}
-    Set Test Variable    ${EMPLOYEE_FIRST_NAME}
-    Set Test Variable    ${EMPLOYEE_MIDDLE_NAME}
-    Set Test Variable    ${EMPLOYEE_LAST_NAME}
-    Set Test Variable    ${USER_PASSWORD}
-    Set Test Variable    ${EMPLOYEE_PASSWORD}
 
 Click When Visible
     [Arguments]    ${locator}    ${timeout}=10s

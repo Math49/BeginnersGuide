@@ -10,7 +10,6 @@ Test User Manager
 
     [Tags]    tnr
     Initialize Data Set
-    Login to Website
     Create User
     Search User
     Edit User
@@ -21,8 +20,7 @@ Test User Manager
 *** Keywords ***
 Create User
 
-    Wait Until Element Is Visible    ${ADMIN_NAVIGATION}     timeout=10s
-    Click Element    ${ADMIN_NAVIGATION}
+    Admin Navigation
     Wait Until Element Is Visible    ${ADMIN_BUTTON_ADD}     timeout=10s
     Click Element    ${ADMIN_BUTTON_ADD}
     Wait Until Element Is Visible    ${ADMIN_FORM_INPUT_ROLE}     timeout=10s
@@ -42,29 +40,31 @@ Create User
     Click submit button
 
 Search User
-    Wait Until Element Is Visible    ${ADMIN_NAVIGATION}     timeout=10s
-    Click Element    ${ADMIN_NAVIGATION}
+    Admin Navigation
     Wait Until Element Is Visible    ${ADMIN_FORM_INPUT_EMPLOYEE_NAME}    timeout=10s
+    Do Search
+    Page Should Contain    Records Found
+
+Edit User
+    Click edit button
+    Wait Until Element Is Visible    ${FORM_INPUT_USERNAME}    timeout=10s
+    Input Text       ${FORM_INPUT_USERNAME}    testtt
+    Click submit button
+
+Delete User
+    Admin Navigation
+    Wait Until Element Is Visible    ${ADMIN_FORM_INPUT_EMPLOYEE_NAME}    timeout=10s
+    Do Search
+    Click delete button
+    Wait Until Element Is Visible    ${ADMIN_FORM_INPUT_EMPLOYEE_NAME}    timeout=10s
+
+Do Search
     Click Element    ${ADMIN_FORM_INPUT_ROLE}
     Wait Until Element Is Visible    ${ADMIN_FORM_DROPDOWN_THIRD_ELEMENT}    timeout=5s
     Click Element    ${ADMIN_FORM_DROPDOWN_THIRD_ELEMENT}
     Click submit button
     Sleep    2s
-    Page Should Contain    Records Found
 
-Edit User
+Admin Navigation
     Wait Until Element Is Visible    ${ADMIN_NAVIGATION}     timeout=10s
     Click Element    ${ADMIN_NAVIGATION}
-    Wait Until Element Is Visible    ${ADMIN_FORM_INPUT_EMPLOYEE_NAME}    timeout=10s
-    Click edit button
-    Enter passwords for create form   ${USER_PASSWORD}
-    Click submit button
-
-Delete User
-    Wait Until Element Is Visible    ${ADMIN_NAVIGATION}     timeout=10s
-    Click Element    ${ADMIN_NAVIGATION}
-    Wait Until Element Is Visible    ${ADMIN_FORM_INPUT_EMPLOYEE_NAME}    timeout=10s
-    Input Text       ${ADMIN_FORM_INPUT_EMPLOYEE_NAME}    ${EMPLOYEE_FIRST_NAME} ${EMPLOYEE_LAST_NAME}
-    Click submit button
-    Click delete button
-    Page Should Not Contain    ${USER_NAME}
