@@ -29,6 +29,7 @@ ${DELETE_CONFIRM_BUTTON}    xpath=//button[text()='Yes, Delete']
 ${SUBMIT_BUTTON}   xpath=//button[@type='submit']
 ${FORM_INPUT_PASSWORD}        xpath=//label[text()='Password']/ancestor::div[contains(@class,'oxd-input-group')]//input
 ${FORM_INPUT_CONFIRM_PASSWORD}    xpath=//label[text()='Confirm Password']/ancestor::div[contains(@class,'oxd-input-group')]//input
+${FORM_INPUT_USERNAME}            xpath=//label[text()='Username']/ancestor::div[contains(@class,'oxd-input-group')]//input
 
 # login/logout elements
 ${LOGIN_INPUT_USERNAME}    xpath=//input[@name='username']
@@ -42,9 +43,6 @@ ${ADMIN_BUTTON_ADD}                xpath=//button[normalize-space(.)='Add']
 ${ADMIN_FORM_INPUT_ROLE}                xpath=//label[text()='User Role']/ancestor::div[contains(@class,'oxd-input-group')]//div[contains(@class,'oxd-select-text')]
 ${ADMIN_FORM_INPUT_STATUS}              xpath=//label[text()='Status']/ancestor::div[contains(@class,'oxd-input-group')]//div[contains(@class,'oxd-select-text')]
 ${ADMIN_FORM_INPUT_EMPLOYEE_NAME}       xpath=//label[text()='Employee Name']/ancestor::div[contains(@class,'oxd-input-group')]//input
-${ADMIN_FORM_INPUT_USERNAME}            xpath=//label[text()='Username']/ancestor::div[contains(@class,'oxd-input-group')]//input
-
-${ADMIN_SEARCH_INPUT_USERNAME}    xpath=//label[text()='Username']/ancestor::div[contains(@class,'oxd-input-group')]//input
 
 # employee elements
 ${EMPLOYEE_NAVIGATION}                 xpath=//span[text()='PIM']/ancestor::a
@@ -54,7 +52,6 @@ ${EMPLOYEE_FORM_INPUT_MIDDLE_NAME}      xpath=//label[text()='Middle Name']/ance
 ${EMPLOYEE_FORM_INPUT_LAST_NAME}        xpath=//label[text()='Last Name']/ancestor::div[contains(@class,'oxd-input-group')]//input
 ${EMPLOYEE_FORM_INPUT_ID}              xpath=//label[text()='Employee Id']/ancestor::div[contains(@class,'oxd-input-group')]//input
 ${EMPLOYEE_CREATE_LOGIN_DETAILS}       xpath=//p[text()='Create Login Details']/ancestor::div[contains(@class,'user-form-header')]//div[contains(@class, 'oxd-switch-wrapper')]//input
-${EMPLOYEE_FORM_INPUT_USERNAME}       xpath=//label[text()='Username']/ancestor::div[contains(@class,'oxd-input-group')]//input
 ${EMPLOYEE_FORM_INPUT_STATUS}         xpath=//label[text()='Status']/ancestor::div[contains(@class,'oxd-input-group')]//div[contains(@class,'--status-grouped-field')]
 
 ${EMPLOYEE_SEARCH_INPUT_NAME}    xpath=//label[text()='Employee Name']/ancestor::div[contains(@class,'oxd-input-group')]//input
@@ -72,6 +69,7 @@ Initialize Data Set
     ${USER_PASSWORD}    FakerLibrary.Password
     ${EMPLOYEE_PASSWORD}    FakerLibrary.Password
 
+# Go and login to the website
 Login to Website
     Open Browser    ${URL}    Chrome
     Maximize Browser Window
@@ -79,13 +77,14 @@ Login to Website
     Input Text    ${LOGIN_INPUT_PASSWORD}    ${LOGIN_PASSWORD}
     Click Button    ${SUBMIT_BUTTON}
 
-# Go and login to the website
-
 # Click submit
 Click submit button
     Click Element    ${SUBMIT_BUTTON}
 
 # Enter username for create form
+Enter username for create form
+    [Arguments]    ${USERNAME}
+    Input Text   ${FORM_INPUT_USERNAME}    ${USERNAME}
 
 # Enter passwords for create form
 Enter passwords for create form
