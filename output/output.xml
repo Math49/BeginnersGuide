@@ -1,228 +1,270 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.12.0 on win32)" generated="20250330 19:39:31.078" rpa="false" schemaversion="4">
-<suite id="s1" name="Rappel RBF" source="c:\Users\lucas\OneDrive\Documents\GitHub\BeginnersGuide\Tests\Rappel_RBF.robot">
-<kw name="Log Report And Console" type="SETUP">
-<arg>Global Suite Setup</arg>
-<kw name="Log" library="BuiltIn">
-<arg>${message}</arg>
-<arg>level=${level}</arg>
-<arg>console=True</arg>
+<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-04-15T12:01:16.306275" rpa="false" schemaversion="5">
+<suite id="s1" name="TS TODO" source="c:\Users\mthsm\Documents\B3\Qualite-logiciel-et-test\Eval\Tests\TS_TODO.robot">
+<test id="s1-t1" name="Scenario TODO" line="22">
+<kw name="Launch Todo">
+<kw name="YOU_CAN_DO_IT_KEYWORD">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-15T12:01:16.535023" level="INFO">['https://todomvc.com/examples/angular/dist/browser/#/all', 'chrome']</msg>
+<arg>${arg}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20250330 19:39:31.180" level="INFO">Global Suite Setup</msg>
-<status status="PASS" starttime="20250330 19:39:31.164" endtime="20250330 19:39:31.186"/>
+<status status="PASS" start="2025-04-15T12:01:16.534848" elapsed="0.001748"/>
 </kw>
-<status status="PASS" starttime="20250330 19:39:31.164" endtime="20250330 19:39:31.189"/>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<status status="PASS" start="2025-04-15T12:01:16.534342" elapsed="0.002636"/>
 </kw>
-<test id="s1-t1" name="TC Evaluate" line="403">
-<kw name="testSetup" type="SETUP">
-<kw name="Log Report And Console">
-<arg>${EMPTY}</arg>
-<kw name="Log" library="BuiltIn">
-<arg>${message}</arg>
-<arg>level=${level}</arg>
-<arg>console=True</arg>
+<kw name="YOU_CAN_DO_IT_KEYWORD">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-15T12:01:16.538156" level="INFO">['1s']</msg>
+<arg>${arg}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20250330 19:39:31.198" level="INFO"/>
-<status status="PASS" starttime="20250330 19:39:31.193" endtime="20250330 19:39:31.199"/>
+<status status="PASS" start="2025-04-15T12:01:16.537831" elapsed="0.000538"/>
 </kw>
-<status status="PASS" starttime="20250330 19:39:31.193" endtime="20250330 19:39:31.199"/>
+<arg>1s</arg>
+<status status="PASS" start="2025-04-15T12:01:16.537272" elapsed="0.001185"/>
 </kw>
-<kw name="Log Report And Console">
-<arg>Global Test Setup</arg>
-<kw name="Log" library="BuiltIn">
-<arg>${message}</arg>
-<arg>level=${level}</arg>
-<arg>console=True</arg>
+<kw name="YOU_CAN_DO_IT_KEYWORD">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-15T12:01:16.539053" level="INFO">['angular']</msg>
+<arg>${arg}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20250330 19:39:31.201" level="INFO">Global Test Setup</msg>
-<status status="PASS" starttime="20250330 19:39:31.201" endtime="20250330 19:39:31.201"/>
+<status status="PASS" start="2025-04-15T12:01:16.538885" elapsed="0.000266"/>
 </kw>
-<status status="PASS" starttime="20250330 19:39:31.199" endtime="20250330 19:39:31.201"/>
+<arg>angular</arg>
+<status status="PASS" start="2025-04-15T12:01:16.538659" elapsed="0.000565"/>
 </kw>
-<status status="PASS" starttime="20250330 19:39:31.193" endtime="20250330 19:39:31.201"/>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<var>${resultat}</var>
-<arg>${myNumber1}+${myNumber2}</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20250330 19:39:31.206" level="INFO">${resultat} = 11</msg>
-<status status="PASS" starttime="20250330 19:39:31.206" endtime="20250330 19:39:31.206"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${resultat}</var>
-<arg>${myNumber} + 10</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20250330 19:39:31.206" level="INFO">${resultat} = 2 + 10</msg>
-<status status="PASS" starttime="20250330 19:39:31.206" endtime="20250330 19:39:31.206"/>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<var>${randomNumber}</var>
-<arg>random.randint(0,9)</arg>
-<arg>modules=random</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20250330 19:39:31.206" level="INFO">${randomNumber} = 8</msg>
-<status status="PASS" starttime="20250330 19:39:31.206" endtime="20250330 19:39:31.206"/>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<var>${randomNumberList}</var>
-<arg>random.sample(range(1, 11), 4)</arg>
-<arg>modules=random</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20250330 19:39:31.217" level="INFO">${randomNumberList} = [10, 3, 8, 7]</msg>
-<status status="PASS" starttime="20250330 19:39:31.217" endtime="20250330 19:39:31.217"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${min}</var>
-<arg>${1}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20250330 19:39:31.224" level="INFO">${min} = 1</msg>
-<status status="PASS" starttime="20250330 19:39:31.223" endtime="20250330 19:39:31.225"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${max}</var>
-<arg>${10}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20250330 19:39:31.229" level="INFO">${max} = 10</msg>
-<status status="PASS" starttime="20250330 19:39:31.228" endtime="20250330 19:39:31.229"/>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<var>${random}</var>
-<arg>random.randint(${min}, ${max})</arg>
-<arg>modules=random, sys</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20250330 19:39:31.229" level="INFO">${random} = 6</msg>
-<status status="PASS" starttime="20250330 19:39:31.229" endtime="20250330 19:39:31.229"/>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<var>${testTitle}</var>
-<arg>'g'=='l'</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20250330 19:39:31.229" level="INFO">${testTitle} = False</msg>
-<status status="PASS" starttime="20250330 19:39:31.229" endtime="20250330 19:39:31.229"/>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<var>${testPrice}</var>
-<arg>'h'=='h'</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20250330 19:39:31.229" level="INFO">${testPrice} = True</msg>
-<status status="PASS" starttime="20250330 19:39:31.229" endtime="20250330 19:39:31.229"/>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<var>${testAll}</var>
-<arg>${testTitle} and ${testPrice}</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20250330 19:39:31.242" level="INFO">${testAll} = False</msg>
-<status status="PASS" starttime="20250330 19:39:31.242" endtime="20250330 19:39:31.242"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${mail}</var>
-<arg>test@sogeti.com</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20250330 19:39:31.242" level="INFO">${mail} = test@sogeti.com</msg>
-<status status="PASS" starttime="20250330 19:39:31.242" endtime="20250330 19:39:31.249"/>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<var>${urlEncoded2}</var>
-<arg>urllib.parse.quote("${mail}")</arg>
-<arg>modules=urllib</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20250330 19:39:31.249" level="INFO">${urlEncoded2} = test%40sogeti.com</msg>
-<status status="PASS" starttime="20250330 19:39:31.249" endtime="20250330 19:39:31.249"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${url}</var>
-<arg>http://www.cwi.nl:80/%7Eguido/Python.html</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20250330 19:39:31.249" level="INFO">${url} = http://www.cwi.nl:80/%7Eguido/Python.html</msg>
-<status status="PASS" starttime="20250330 19:39:31.249" endtime="20250330 19:39:31.249"/>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<var>${hostname}</var>
-<arg>urllib.parse.urlparse("${url}").hostname</arg>
-<arg>modules=urllib, urllib.parse</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20250330 19:39:31.249" level="INFO">${hostname} = www.cwi.nl</msg>
-<status status="PASS" starttime="20250330 19:39:31.249" endtime="20250330 19:39:31.258"/>
-</kw>
-<kw name="testTeardown" type="TEARDOWN">
-<kw name="Log Report And Console">
-<arg>Global Test Teardown</arg>
-<kw name="Log" library="BuiltIn">
-<arg>${message}</arg>
-<arg>level=${level}</arg>
-<arg>console=True</arg>
+<kw name="YOU_CAN_DO_IT_KEYWORD">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-15T12:01:16.539670" level="INFO">['YOU_CAN_DO_IT_LOCATOR', 'Todos', 'timeout=5s']</msg>
+<arg>${arg}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20250330 19:39:31.258" level="INFO">Global Test Teardown</msg>
-<status status="PASS" starttime="20250330 19:39:31.258" endtime="20250330 19:39:31.258"/>
+<status status="PASS" start="2025-04-15T12:01:16.539542" elapsed="0.000201"/>
 </kw>
-<status status="PASS" starttime="20250330 19:39:31.258" endtime="20250330 19:39:31.258"/>
+<arg>${LOCATOR_TITLE}</arg>
+<arg>Todos</arg>
+<arg>timeout=5s</arg>
+<status status="PASS" start="2025-04-15T12:01:16.539331" elapsed="0.000488"/>
 </kw>
-<kw name="Log Report And Console">
-<arg>${TEST STATUS}</arg>
-<kw name="Log" library="BuiltIn">
-<arg>${message}</arg>
-<arg>level=${level}</arg>
-<arg>console=True</arg>
+<status status="PASS" start="2025-04-15T12:01:16.533992" elapsed="0.005892"/>
+</kw>
+<kw name="YOU_CAN_DO_IT_KEYWORD">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-15T12:01:16.540769" level="INFO">['C:\\Users\\mthsm\\Documents\\B3\\Qualite-logiciel-et-test\\Eval\\output/step01-initial.png']</msg>
+<arg>${arg}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20250330 19:39:31.258" level="INFO">PASS</msg>
-<status status="PASS" starttime="20250330 19:39:31.258" endtime="20250330 19:39:31.258"/>
+<status status="PASS" start="2025-04-15T12:01:16.540649" elapsed="0.000207"/>
 </kw>
-<status status="PASS" starttime="20250330 19:39:31.258" endtime="20250330 19:39:31.258"/>
+<arg>${OUTPUT_DIR}/step01-initial.png</arg>
+<status status="PASS" start="2025-04-15T12:01:16.540415" elapsed="0.000514"/>
 </kw>
-<kw name="Log Report And Console">
-<arg>${TEST MESSAGE}</arg>
-<kw name="Log" library="BuiltIn">
-<arg>${message}</arg>
-<arg>level=${level}</arg>
-<arg>console=True</arg>
+<kw name="Add Todo">
+<kw name="YOU_CAN_DO_IT_KEYWORD">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-15T12:01:16.542187" level="INFO">['YOU_CAN_DO_IT_LOCATOR', 'SELENIUM']</msg>
+<arg>${arg}</arg>
 <doc>Logs the given message with the given level.</doc>
-<msg timestamp="20250330 19:39:31.258" level="INFO"/>
-<status status="PASS" starttime="20250330 19:39:31.258" endtime="20250330 19:39:31.258"/>
+<status status="PASS" start="2025-04-15T12:01:16.542057" elapsed="0.000231"/>
 </kw>
-<status status="PASS" starttime="20250330 19:39:31.258" endtime="20250330 19:39:31.258"/>
+<arg>${LOCATOR_INPUT_NEWTODO}</arg>
+<arg>${todo_name}</arg>
+<status status="PASS" start="2025-04-15T12:01:16.541805" elapsed="0.000562"/>
 </kw>
-<if>
-<branch type="IF" condition="'${TEST STATUS}' == 'PASS'">
-<kw name="Set Test Message" library="BuiltIn">
-<arg>Test OK\nOn pourait mettre la synthèse des étapes/vérificarions effectuées</arg>
-<doc>Sets message for the current test case.</doc>
-<msg timestamp="20250330 19:39:31.275" level="INFO">Set test message to:
-Test OK
-On pourait mettre la synthèse des étapes/vérificarions effectuées</msg>
-<status status="PASS" starttime="20250330 19:39:31.275" endtime="20250330 19:39:31.275"/>
+<kw name="YOU_CAN_DO_IT_KEYWORD">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-15T12:01:16.542730" level="INFO">['YOU_CAN_DO_IT_LOCATOR', 'TODO_KEY_RETURN']</msg>
+<arg>${arg}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-15T12:01:16.542636" elapsed="0.000165"/>
 </kw>
-<status status="PASS" starttime="20250330 19:39:31.258" endtime="20250330 19:39:31.275"/>
-</branch>
-<status status="PASS" starttime="20250330 19:39:31.258" endtime="20250330 19:39:31.275"/>
-</if>
-<status status="PASS" starttime="20250330 19:39:31.258" endtime="20250330 19:39:31.275"/>
+<arg>${LOCATOR_INPUT_NEWTODO}</arg>
+<arg>TODO_KEY_RETURN</arg>
+<status status="PASS" start="2025-04-15T12:01:16.542463" elapsed="0.000403"/>
 </kw>
-<doc>Utilisation d'évaluation d'instructions python</doc>
+<kw name="YOU_CAN_DO_IT_KEYWORD">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-15T12:01:16.543313" level="INFO">['SELENIUM']</msg>
+<arg>${arg}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-15T12:01:16.543174" elapsed="0.000223"/>
+</kw>
+<arg>${todo_name}</arg>
+<status status="PASS" start="2025-04-15T12:01:16.542954" elapsed="0.000506"/>
+</kw>
+<arg>SELENIUM</arg>
+<status status="PASS" start="2025-04-15T12:01:16.541519" elapsed="0.001997"/>
+</kw>
+<kw name="Add Todo">
+<kw name="YOU_CAN_DO_IT_KEYWORD">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-15T12:01:16.544278" level="INFO">['YOU_CAN_DO_IT_LOCATOR', 'APPIUM']</msg>
+<arg>${arg}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-15T12:01:16.544166" elapsed="0.000209"/>
+</kw>
+<arg>${LOCATOR_INPUT_NEWTODO}</arg>
+<arg>${todo_name}</arg>
+<status status="PASS" start="2025-04-15T12:01:16.543972" elapsed="0.000480"/>
+</kw>
+<kw name="YOU_CAN_DO_IT_KEYWORD">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-15T12:01:16.544824" level="INFO">['YOU_CAN_DO_IT_LOCATOR', 'TODO_KEY_RETURN']</msg>
+<arg>${arg}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-15T12:01:16.544715" elapsed="0.000184"/>
+</kw>
+<arg>${LOCATOR_INPUT_NEWTODO}</arg>
+<arg>TODO_KEY_RETURN</arg>
+<status status="PASS" start="2025-04-15T12:01:16.544541" elapsed="0.000433"/>
+</kw>
+<kw name="YOU_CAN_DO_IT_KEYWORD">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-15T12:01:16.545358" level="INFO">['APPIUM']</msg>
+<arg>${arg}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-15T12:01:16.545238" elapsed="0.000205"/>
+</kw>
+<arg>${todo_name}</arg>
+<status status="PASS" start="2025-04-15T12:01:16.545066" elapsed="0.000439"/>
+</kw>
+<arg>APPIUM</arg>
+<status status="PASS" start="2025-04-15T12:01:16.543801" elapsed="0.001759"/>
+</kw>
+<kw name="Add Todo">
+<kw name="YOU_CAN_DO_IT_KEYWORD">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-15T12:01:16.546526" level="INFO">['YOU_CAN_DO_IT_LOCATOR', 'PYTHON']</msg>
+<arg>${arg}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-15T12:01:16.546410" elapsed="0.000204"/>
+</kw>
+<arg>${LOCATOR_INPUT_NEWTODO}</arg>
+<arg>${todo_name}</arg>
+<status status="PASS" start="2025-04-15T12:01:16.546212" elapsed="0.000476"/>
+</kw>
+<kw name="YOU_CAN_DO_IT_KEYWORD">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-15T12:01:16.547274" level="INFO">['YOU_CAN_DO_IT_LOCATOR', 'TODO_KEY_RETURN']</msg>
+<arg>${arg}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-15T12:01:16.546939" elapsed="0.000419"/>
+</kw>
+<arg>${LOCATOR_INPUT_NEWTODO}</arg>
+<arg>TODO_KEY_RETURN</arg>
+<status status="PASS" start="2025-04-15T12:01:16.546776" elapsed="0.000654"/>
+</kw>
+<kw name="YOU_CAN_DO_IT_KEYWORD">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-15T12:01:16.547839" level="INFO">['PYTHON']</msg>
+<arg>${arg}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-15T12:01:16.547721" elapsed="0.000196"/>
+</kw>
+<arg>${todo_name}</arg>
+<status status="PASS" start="2025-04-15T12:01:16.547528" elapsed="0.000451"/>
+</kw>
+<arg>PYTHON</arg>
+<status status="PASS" start="2025-04-15T12:01:16.545980" elapsed="0.002057"/>
+</kw>
+<kw name="YOU_CAN_DO_IT_KEYWORD">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-15T12:01:16.548913" level="INFO">['C:\\Users\\mthsm\\Documents\\B3\\Qualite-logiciel-et-test\\Eval\\output/step02-addTodo.png']</msg>
+<arg>${arg}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-15T12:01:16.548766" elapsed="0.000232"/>
+</kw>
+<arg>${OUTPUT_DIR}/step02-addTodo.png</arg>
+<status status="PASS" start="2025-04-15T12:01:16.548468" elapsed="0.000604"/>
+</kw>
+<kw name="Select Todo">
+<kw name="YOU_CAN_DO_IT_KEYWORD">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-15T12:01:16.550107" level="INFO">['YOU_CAN_DO_IT_DYNAMIC_LOCATOR_INPUT_CHECKBOX_LI_CONTAINS_USERNAME']</msg>
+<arg>${arg}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-15T12:01:16.549971" elapsed="0.000249"/>
+</kw>
+<arg>YOU_CAN_DO_IT_DYNAMIC_LOCATOR_INPUT_CHECKBOX_LI_CONTAINS_USERNAME</arg>
+<status status="PASS" start="2025-04-15T12:01:16.549772" elapsed="0.000588"/>
+</kw>
+<arg>APPIUM</arg>
+<status status="PASS" start="2025-04-15T12:01:16.549536" elapsed="0.001119"/>
+</kw>
+<kw name="YOU_CAN_DO_IT_KEYWORD">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-15T12:01:16.551392" level="INFO">['C:\\Users\\mthsm\\Documents\\B3\\Qualite-logiciel-et-test\\Eval\\output/step03-selectTodo.png']</msg>
+<arg>${arg}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-15T12:01:16.551266" elapsed="0.000219"/>
+</kw>
+<arg>${OUTPUT_DIR}/step03-selectTodo.png</arg>
+<status status="PASS" start="2025-04-15T12:01:16.551025" elapsed="0.000534"/>
+</kw>
+<kw name="Clear Todo">
+<kw name="YOU_CAN_DO_IT_KEYWORD">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-15T12:01:16.552397" level="INFO">['YOU_CAN_DO_IT_LOCATOR']</msg>
+<arg>${arg}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-15T12:01:16.552281" elapsed="0.000208"/>
+</kw>
+<arg>${LOCATOR_BUTTON_CLEAR}</arg>
+<status status="PASS" start="2025-04-15T12:01:16.552086" elapsed="0.000476"/>
+</kw>
+<status status="PASS" start="2025-04-15T12:01:16.551885" elapsed="0.000741"/>
+</kw>
+<kw name="YOU_CAN_DO_IT_KEYWORD">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-15T12:01:16.553824" level="INFO">['C:\\Users\\mthsm\\Documents\\B3\\Qualite-logiciel-et-test\\Eval\\output/step04-clearTodo.png']</msg>
+<arg>${arg}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-15T12:01:16.553644" elapsed="0.000314"/>
+</kw>
+<arg>${OUTPUT_DIR}/step04-clearTodo.png</arg>
+<status status="PASS" start="2025-04-15T12:01:16.553280" elapsed="0.000796"/>
+</kw>
+<kw name="Delete Todo">
+<kw name="YOU_CAN_DO_IT_KEYWORD">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-15T12:01:16.554990" level="INFO">['YOU_CAN_DO_IT_LOCATOR']</msg>
+<arg>${arg}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-15T12:01:16.554874" elapsed="0.000205"/>
+</kw>
+<arg>${LOCATOR_BUTTON_CLEAR}</arg>
+<status status="PASS" start="2025-04-15T12:01:16.554682" elapsed="0.000476"/>
+</kw>
+<arg>PYTHON</arg>
+<status status="PASS" start="2025-04-15T12:01:16.554456" elapsed="0.000766"/>
+</kw>
+<kw name="YOU_CAN_DO_IT_KEYWORD">
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-15T12:01:16.556080" level="INFO">['C:\\Users\\mthsm\\Documents\\B3\\Qualite-logiciel-et-test\\Eval\\output/step04-clearTodo.png']</msg>
+<arg>${arg}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-15T12:01:16.555957" elapsed="0.000208"/>
+</kw>
+<arg>${OUTPUT_DIR}/step04-clearTodo.png</arg>
+<status status="PASS" start="2025-04-15T12:01:16.555722" elapsed="0.000517"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-04-15T12:01:16.557040" elapsed="0.000447"/>
+</kw>
+<doc>
+0) Exercices sur le site angular
+
+1) scenario d'ajout de 3 todo
+
+2) traitement d'une tache
+
+3) supression d'une tache
+
+4) contrôle supplémentaire</doc>
 <tag>tnr</tag>
-<status status="PASS" starttime="20250330 19:39:31.189" endtime="20250330 19:39:31.279">Test OK
-On pourait mettre la synthèse des étapes/vérificarions effectuées</status>
+<status status="PASS" start="2025-04-15T12:01:16.533183" elapsed="0.024873"/>
 </test>
-<kw name="Log Report And Console" type="TEARDOWN">
-<arg>Global Suite Teardown</arg>
-<kw name="Log" library="BuiltIn">
-<arg>${message}</arg>
-<arg>level=${level}</arg>
-<arg>console=True</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20250330 19:39:31.279" level="INFO">Global Suite Teardown</msg>
-<status status="PASS" starttime="20250330 19:39:31.279" endtime="20250330 19:39:31.290"/>
-</kw>
-<status status="PASS" starttime="20250330 19:39:31.279" endtime="20250330 19:39:31.290"/>
-</kw>
-<doc>Permet d'avoir des exemples d'utilisation de Robot Framework
-
-C'est un condensé de tout ce que l'on doit connaitre avant de faire des tests Selenium/Appium
-
-C'est un résumé du User Guide et des keywords indispensables de la librairie Builtin</doc>
-<meta name="Author">eric.mersier@sogeti.com</meta>
-<meta name="Date">18/10/2020</meta>
-<meta name="Version">1.0</meta>
-<status status="PASS" starttime="20250330 19:39:31.089" endtime="20250330 19:39:31.292"/>
+<status status="PASS" start="2025-04-15T12:01:16.309477" elapsed="0.249721"/>
 </suite>
 <statistics>
 <total>
@@ -232,7 +274,7 @@ C'est un résumé du User Guide et des keywords indispensables de la librairie B
 <stat pass="1" fail="0" skip="0">tnr</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Rappel RBF">Rappel RBF</stat>
+<stat name="TS TODO" id="s1" pass="1" fail="0" skip="0">TS TODO</stat>
 </suite>
 </statistics>
 <errors>
