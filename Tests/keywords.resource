@@ -25,7 +25,7 @@ ${EMPLOYEE_USERNAME}    testemployee
 # elements
 ${EDIT_BUTTON}    xpath=//button/i[@class='oxd-icon bi-pencil-fill']
 ${DELETE_BUTTON}    xpath=//button/i[@class='oxd-icon bi-trash']
-${DELETE_CONFIRM_BUTTON}    xpath=//button[text()='Yes, Delete']
+${DELETE_CONFIRM_BUTTON}    xpath=//button[contains(.,'Yes, Delete')]
 ${SUBMIT_BUTTON}   xpath=//button[@type='submit']
 ${FORM_INPUT_PASSWORD}        xpath=//label[text()='Password']/ancestor::div[contains(@class,'oxd-input-group')]//input
 ${FORM_INPUT_CONFIRM_PASSWORD}    xpath=//label[text()='Confirm Password']/ancestor::div[contains(@class,'oxd-input-group')]//input
@@ -51,11 +51,11 @@ ${ADMIN_USER_LIST}    xpath=//div[contains(@class, 'orangehrm-container')]
 # employee elements
 ${EMPLOYEE_NAVIGATION}                 xpath=//span[text()='PIM']/ancestor::a
 ${EMPLOYEE_BUTTON_ADD}                xpath=//button[normalize-space(.)='Add']
-${EMPLOYEE_FORM_INPUT_FIRST_NAME}       xpath=//label[text()='First Name']/ancestor::div[contains(@class,'oxd-input-group')]//input
-${EMPLOYEE_FORM_INPUT_MIDDLE_NAME}      xpath=//label[text()='Middle Name']/ancestor::div[contains(@class,'oxd-input-group')]//input
-${EMPLOYEE_FORM_INPUT_LAST_NAME}        xpath=//label[text()='Last Name']/ancestor::div[contains(@class,'oxd-input-group')]//input
+${EMPLOYEE_FORM_INPUT_FIRST_NAME}     xpath=//input[@name='firstName']
+${EMPLOYEE_FORM_INPUT_MIDDLE_NAME}    xpath=//input[@name='middleName']
+${EMPLOYEE_FORM_INPUT_LAST_NAME}      xpath=//input[@name='lastName']
 ${EMPLOYEE_FORM_INPUT_ID}              xpath=//label[text()='Employee Id']/ancestor::div[contains(@class,'oxd-input-group')]//input
-${EMPLOYEE_CREATE_LOGIN_DETAILS}       xpath=//p[text()='Create Login Details']/ancestor::div[contains(@class,'user-form-header')]//div[contains(@class, 'oxd-switch-wrapper')]//input
+${EMPLOYEE_CREATE_LOGIN_DETAILS}    xpath=//div[contains(@class,'user-form-header')]//span[contains(@class,'oxd-switch-input')]
 ${EMPLOYEE_FORM_INPUT_STATUS}         xpath=//label[text()='Status']/ancestor::div[contains(@class,'oxd-input-group')]//div[contains(@class,'--status-grouped-field')]
 
 ${EMPLOYEE_SEARCH_INPUT_NAME}    xpath=//label[text()='Employee Name']/ancestor::div[contains(@class,'oxd-input-group')]//input
@@ -81,6 +81,11 @@ Initialize Data Set
     Set Test Variable    ${USER_PASSWORD}
     Set Test Variable    ${EMPLOYEE_PASSWORD}
 
+Click When Visible
+    [Arguments]    ${locator}    ${timeout}=10s
+    Wait Until Element Is Visible    ${locator}    timeout=${timeout}
+    Click Element    ${locator}
+
 # Go and login to the website
 Login to Website
     Open Browser    ${URL}    Chrome
@@ -92,7 +97,7 @@ Login to Website
 
 # Click submit
 Click submit button
-    Click Element    ${SUBMIT_BUTTON}
+    Click When Visible    ${SUBMIT_BUTTON}
 
 # Enter username for create form
 Enter username for create form
@@ -107,16 +112,17 @@ Enter passwords for create form
 
 # Click edit button
 Click edit button
-    Click Element    ${EDIT_BUTTON}
+    Click When Visible    ${EDIT_BUTTON}
 
 # Click delete button
 Click delete button
-    Click Element    ${DELETE_BUTTON}
+    Click When Visible    ${DELETE_BUTTON}
     Wait Until Element Is Visible    ${DELETE_CONFIRM_BUTTON}    timeout=10s
-    Click Element    ${DELETE_CONFIRM_BUTTON}
+    Click When Visible    ${DELETE_CONFIRM_BUTTON}
 
 # Logout
 Logout
-    Click Element    ${ACCOUNT_BUTTON}
-    Click Element    ${LOGOUT_BUTTON}
-    Close Browser
+    Click When Visible    ${ACCOUNT_BUTTON}
+    Click When Visible    ${LOGOUT_BUTTON}
+    Wait Until Element Is Visible    ${LOGIN_INPUT_USERNAME}    timeout=10s
+    Page Should Contain Element    ${LOGIN_INPUT_USERNAME}
