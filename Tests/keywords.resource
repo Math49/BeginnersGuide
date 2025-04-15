@@ -120,4 +120,5 @@ Click delete button
 Logout
     Click When Visible    ${ACCOUNT_BUTTON}
     Click When Visible    ${LOGOUT_BUTTON}
-    Close Browser
+    Wait Until Element Is Visible    ${LOGIN_INPUT_USERNAME}    timeout=10s
+    Page Should Contain Element    ${LOGIN_INPUT_USERNAME}
