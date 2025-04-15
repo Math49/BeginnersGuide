@@ -25,7 +25,7 @@ ${EMPLOYEE_USERNAME}    testemployee
 # elements
 ${EDIT_BUTTON}    xpath=//button/i[@class='oxd-icon bi-pencil-fill']
 ${DELETE_BUTTON}    xpath=//button/i[@class='oxd-icon bi-trash']
-${DELETE_CONFIRM_BUTTON}    xpath=//button[text()='Yes, Delete']
+${DELETE_CONFIRM_BUTTON}    xpath=//button[contains(.,'Yes, Delete')]
 ${SUBMIT_BUTTON}   xpath=//button[@type='submit']
 ${FORM_INPUT_PASSWORD}        xpath=//label[text()='Password']/ancestor::div[contains(@class,'oxd-input-group')]//input
 ${FORM_INPUT_CONFIRM_PASSWORD}    xpath=//label[text()='Confirm Password']/ancestor::div[contains(@class,'oxd-input-group')]//input
