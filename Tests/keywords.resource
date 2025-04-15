@@ -1,10 +1,15 @@
+*** Settings ***
+Library    SeleniumLibrary
+Library    FakerLibrary
+
+
 *** Variables ***
 ${URL}   https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
 ${LOGIN_USERNAME}    Admin
 ${LOGIN_PASSWORD}    admin123
 
 # user data
-${USER_EMPLOYEE_NAME}    testemployee
+${USER_EMPLOYEE_NAME}    a
 ${USER_NAME}    testuser
 ${USER_ROLE}    ESS
 ${USER_STATUS}    Enabled
@@ -14,7 +19,6 @@ ${USER_PASSWORD}    testpassword
 ${EMPLOYEE_FIRST_NAME}    test
 ${EMPLOYEE_MIDDLE_NAME}    testmiddle
 ${EMPLOYEE_LAST_NAME}    employee
-${EMPLOYEE_ID}    1234
 ${EMPLOYEE_STATUS}    Enabled
 ${EMPLOYEE_PASSWORD}    testpassword
 ${EMPLOYEE_USERNAME}    testemployee
@@ -58,6 +62,14 @@ ${EMPLOYEE_SEARCH_INPUT_NAME}    xpath=//label[text()='Employee Name']/ancestor:
 
 *** Keywords ***
 # Initialize data
+Initialize Data Set
+    ${USER_PASSWORD}    FakerLibrary.Password
+    ${USER_NAME}    FakerLibrary.UserName
+    ${EMPLOYEE_FIRST_NAME}    FakerLibrary.FirstName
+    ${EMPLOYEE_MIDDLE_NAME}    FakerLibrary.FirstName
+    ${EMPLOYEE_LAST_NAME}    FakerLibrary.LastName
+    ${EMPLOYEE_USERNAME}    FakerLibrary.UserName
+    ${EMPLOYEE_PASSWORD}    FakerLibrary.Password
 
 # Go and login to the website
 
