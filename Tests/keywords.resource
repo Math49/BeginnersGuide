@@ -99,6 +99,8 @@ Click edit button
 # Click delete button
 Click delete button
     Click Element    ${DELETE_BUTTON}
+    Wait Until Element Is Visible    ${DELETE_CONFIRM_BUTTON}    timeout=10s
+    Click Element    ${DELETE_CONFIRM_BUTTON}
 
 # Logout
 Logout
